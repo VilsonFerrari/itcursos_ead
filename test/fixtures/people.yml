@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  cpf: MyString
+  name: MyString
+  email: MyString
+  sex: MyString
+  birth_date: 2011-10-08
+  parents: MyString
+
+two:
+  cpf: MyString
+  name: MyString
+  email: MyString
+  sex: MyString
+  birth_date: 2011-10-08
+  parents: MyString
