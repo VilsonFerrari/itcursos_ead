@@ -12,9 +12,13 @@
   <%= render 'layouts/header' %>
 
   <section id="content">
+<<<<<<< HEAD
     <section class="container">
-      <%= render 'layouts/alert-messages'%>
+      <%= render 'layouts/alert-messages' %>
+=======
+    <%= render 'layouts/alert-messages'%>
     <section class="container">
+>>>>>>> 9bfeed028aad0ac17df106ef28731e5db4cef778
       <%= yield %>
     </section>
   </section>
