@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,36 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111022180221) do
+ActiveRecord::Schema.define(:version => 20111022180535) do
+
+  create_table "course_classes", :force => true do |t|
+    t.integer  "course_id"
+    t.string   "location"
+    t.string   "schedule"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "course_classes", ["course_id"], :name => "index_course_classes_on_course_id"
+
+  create_table "courses", :force => true do |t|
+    t.string   "code"
+    t.string   "name"
+    t.text     "description"
+    t.integer  "hours"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "enrollments", :force => true do |t|
+    t.integer  "course_class_id"
+    t.integer  "person_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "enrollments", ["course_class_id"], :name => "index_enrollments_on_course_class_id"
+  add_index "enrollments", ["person_id"], :name => "index_enrollments_on_person_id"
 
   create_table "people", :force => true do |t|
     t.string   "cpf"
