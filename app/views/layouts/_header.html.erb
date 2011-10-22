@@ -1,0 +1,24 @@
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="container">
+      <h3><%= link_to "ItcursosEad", root_path %></h3>
+      <ul class="status">
+        <% if user_signed_in? %>
+          <span>Signed in as
+          <em><%= current_user.username %></em></span>
+          <li>
+            <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to "Sign up", new_user_registration_path %>
+          </li>
+          <span>or</span>
+          <li>
+            <%= link_to "Sign_in", new_user_session_path %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
