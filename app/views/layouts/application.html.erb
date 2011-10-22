@@ -8,13 +8,18 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-<%= link_to "Sair", destroy_user_session_path, :method => :delete  %>
+  
+  <%= render 'layouts/header' %>
 
+  <section id="content">
+    <%= render 'layouts/alert-messages'%>
+    <section class="container">
+      <%= yield %>
+    </section>
+  </section>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+  <section id="footer">
 
-<%= yield %>
-
+  </section>
 </body>
 </html>

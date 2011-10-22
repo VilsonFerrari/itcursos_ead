@@ -1,0 +1,34 @@
+<h1>Sign in</h1>
+
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+
+  <div class="clearfix">
+    <%= f.label "Username or email", :class => "xlInput" %>
+    <div class="input">
+    <%= f.text_field :login %>     
+    </div>
+  </div>
+
+  <div class="clearfix">
+    <%= f.label :password, :class => "xlInput" %>
+    <div class="input">
+      <%= f.password_field :password %>
+    </div>
+  </div>
+  
+  <div class="clearfix">
+    <% if devise_mapping.rememberable? -%>
+      <div class="input checkbox">
+        <%= f.check_box :remember_me %>
+      </div>
+      <div class="checkbox_label">
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
+    <%= render :partial => "devise/shared/links" %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "Sign in", :class => "btn primary" %>
+  </div>
+<% end %>
