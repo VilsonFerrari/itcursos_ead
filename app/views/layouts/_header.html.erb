@@ -2,6 +2,11 @@
   <div class="topbar-inner">
     <div class="container">
       <h3><%= link_to "ItcursosEad", root_path %></h3>
+        <ul class="nav">
+	      <li <%= "class=active" if controller.controller_name == 'people'  %> ><%= link_to "Pessoas", people_path %></li>
+	      <li <%= "class=active" if controller.controller_name == 'courses' or controller.controller_name == 'course_classes'  %> ><%= link_to "Cursos", courses_path %></li>
+	      <li></li>
+	    </ul>
       <ul class="status">
         <% if user_signed_in? %>
           <span>Signed in as
