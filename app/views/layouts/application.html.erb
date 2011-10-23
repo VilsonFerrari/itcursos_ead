@@ -13,14 +13,14 @@
 
   <section id="content">
     <section class="container">
-      <%= render 'layouts/alert-messages'%>
-    <section class="container">
-      <%= yield %>
+      <section id="inner_content">
+        <%= render 'layouts/alert-messages'%>
+        <section class="container">
+          <%= yield %>
+        </section>
+      </section>
     </section>
-  </section>
-
-  <section id="footer">
-
-  </section>
+    <section id="footer">
+    </section> 
 </body>
 </html>

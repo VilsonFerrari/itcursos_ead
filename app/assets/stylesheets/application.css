@@ -2,9 +2,10 @@
  * This is a manifest file that'll automatically include all the stylesheets available in this directory
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
- *= require_self
- *= require_tree .
+
  *= require bootstrap
+ *= require_tree .
+ *= require_self
 */
 
 .status {
@@ -13,10 +14,16 @@
 }
 
 .status span {
-    float: left;
-    padding: 12px 5px 0px;
-  }
-  
-section#content{
-  margin-top:50px;
+  float: left;
+  padding: 12px 5px 0px;
 }
+  
+section#inner_content{
+  padding:50px 0 50px 0;
+  background-color: RGB(240,240,240);
+}
+
+body{
+  background-image:url('noisy.png');
+}
+
