@@ -1,0 +1,46 @@
+<p>
+  <b>Code:</b>
+  <%= @course.code %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @course.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @course.description %>
+</p>
+
+<p>
+  <b>Hours:</b>
+  <%= @course.hours %>
+</p>
+
+<h2>Turmas Cadastradas</h2>
+<table>
+  <tr>
+    <th>Location</th>
+    <th>Schedule</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @course.course_classes.each do |course_class| %>
+  <tr>
+    <td><%= course_class.location %></td>
+    <td><%= course_class.schedule %></td>
+    <td><%= link_to 'Show', course_class %></td>
+    <td><%= link_to 'Edit', edit_course_path(course_class) %></td>
+    <td><%= link_to 'Destroy', course_class, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %> | 
+<%= link_to 'Nova Turma', new_course_course_class_path(@course) %> | 

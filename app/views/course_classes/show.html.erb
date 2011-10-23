@@ -1,0 +1,42 @@
+<p>
+  <b>Course:</b>
+  <%= @course_class.course %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @course_class.location %>
+</p>
+
+<p>
+  <b>Schedule:</b>
+  <%= @course_class.schedule %>
+</p>
+
+<%= link_to 'Edit', edit_course_class_path(@course_class) %> |
+<%= link_to 'Back', @course %> |
+
+
+<h2>Alunos Matriculados</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Cpf</th>
+    <th></th>
+  </tr>
+
+<% @course_class.enrollments.each do |enrollment| %>
+  <tr>
+    <td><%= enrollment.person.name %></td>
+    <td><%= enrollment.person.cpf %></td>
+    <td><%= link_to 'Destroy', enrollment, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<h3>Adicionar Aluno</h3>
+
+
+
+<%= render 'enrollment_form' %>

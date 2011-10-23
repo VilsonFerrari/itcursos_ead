@@ -1,4 +1,12 @@
 ItcursosEad::Application.routes.draw do
+  
+
+  resources :courses do
+    resources :course_classes, :shallow => true, :except => :index do
+      resources :enrollments, :shallow => true, :only => [:create, :destroy]
+    end
+  end
+
   devise_for :users
   resources :people
 
