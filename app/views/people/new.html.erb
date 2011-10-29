@@ -1,5 +1,8 @@
 <h1>New person</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', people_path %>
+<%= form_for @person do |f| %>
+ <%= render 'form', :f => f %>
+ <div class="actions">
+   <%= f.submit "Register Person", :class => 'btn primary' %>&nbsp;&nbsp;
+   <%= link_to 'Back', people_path %>
+ </div> 
+<% end %>

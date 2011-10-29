@@ -23,7 +23,7 @@ section#inner_content{
   background-color: RGB(240,240,240);
 }
 
-body{
+html, body, .container.noisy, #inner_content {
   background-image:url('noisy.png');
 }
 
