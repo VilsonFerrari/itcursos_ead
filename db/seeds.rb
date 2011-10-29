@@ -7,4 +7,22 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
 
-people = 10.times { Person.create(:cpf => '0000000000', :name => 'Nome', :email => 'mail@example.com', :sex => 'sexo', :birth_date => '2011-10-08', :parents => 'Filiacao' ) }
+forenames = ['joão', 'maria', 'pedro', 'lucas', 'josé', 'matheus', 
+             'gustavo', 'mariana', 'marta', 'lúcia', 'amanda', 'joaquim']
+surnames = ['silva', 'pereira','medeiros', 'alves', 'maia', 'santos', 
+            'cavalcante', 'souza', 'nascimento', 'rodrigues', 'oliveira', 'bezerra']
+
+def generate_cpf
+  cpf = ""
+  11.times { cpf += rand(10).to_s }
+  cpf
+end
+
+people = 10.times { 
+  surname = surnames[rand(12)]
+  forename = forenames[rand(12)]
+  Person.create(:cpf => generate_cpf,
+                :name => "#{forename.camelize} #{surname.camelize}", 
+                :email => "#{forename.chars.first}.#{surname}@example.com", 
+                :sex => 'sexo', :birth_date => '2011-10-08', :parents => 'Filiacao' )   
+}
