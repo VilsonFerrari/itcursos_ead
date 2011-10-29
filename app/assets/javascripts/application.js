@@ -41,6 +41,7 @@
 
 }( window.jQuery || window.ender );
 
-$(document).ready(function () {
+jQuery(document).ready(function () {
   $('.topbar').dropdown();
+  $(".chosen").chosen();
 });

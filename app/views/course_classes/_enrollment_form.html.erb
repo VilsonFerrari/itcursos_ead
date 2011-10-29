@@ -10,12 +10,11 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :person %><br />
-    <%= f.collection_select(:person_id, Person.all, :id, :name, :prompt => true) %>
+  
+  <div class="clearfix">
+    <%= select("post", "person_id", Person.all.collect {|p| [ "#{p.name} - #{p.cpf}", p.id ] }, {:prompt => 'Person...'}, :class => 'chosen', :style => 'width: 300px;') %>
   </div>
   <div class="actions">
-    <%= f.submit "Matricular" %>
+    <%= f.submit "Matricular", :class => 'btn primary' %>
   </div>
 <% end %>
