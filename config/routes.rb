@@ -1,5 +1,7 @@
 ItcursosEad::Application.routes.draw do
 
+  resources :labs
+
   resources :locations
 
   resources :location, :shallow => true

@@ -14,6 +14,7 @@ class LocationsController < ApplicationController
   # GET /locations/1.json
   def show
     @location = Location.find(params[:id])
+    @course_classes = CourseClass.find_all_by_location_id(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

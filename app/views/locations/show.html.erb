@@ -13,3 +13,29 @@
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>
+</br></br>
+
+<h2>Turmas Cadastradas</h2>
+<% if !@course_classes.empty? %>
+<table>
+  <tr>
+    <th>Location</th>
+    <th>Schedule</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @course_classes.each do |course_class| %>
+  <tr>
+    <td><%= course_class.location %></td>
+    <td><%= course_class.schedule %></td>
+    <td><%= link_to 'Show', course_class %></td>
+    <td><%= link_to 'Edit', edit_course_path(course_class) %></td>
+    <td><%= link_to 'Destroy', course_class, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<% else %>
+<p>Não existem turmas cadastradas nessa unidade.</p>
+<% end %>

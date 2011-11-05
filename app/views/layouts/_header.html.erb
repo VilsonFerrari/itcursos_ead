@@ -13,7 +13,14 @@
             </ul>
           </li>
 	      <li <%= "class=active" if controller.controller_name == 'courses' or controller.controller_name == 'course_classes'  %> ><%= link_to "Cursos", courses_path %></li>
-        <li <%= "class=active" if controller.controller_name == 'locations' %> ><%= link_to "Unidades", locations_path %></li>
+        <li <%= "class=active" if controller.controller_name == 'locations' ? 'class=\'dropdown active\'' : 'class="dropdown"' %>>
+          <a href="#" class="dropdown-toggle">Unidades</a>
+          <ul = class="dropdown-menu">   
+            <% @locations.each do |location| %>
+              <li><%= link_to location.name, location %></li>
+            <% end %>
+          </ul>
+        </li>
 	      <li></li>
 	    </ul>
       <ul class="status">
