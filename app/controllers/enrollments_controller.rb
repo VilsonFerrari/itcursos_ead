@@ -3,7 +3,8 @@ class EnrollmentsController < ApplicationController
   # POST /enrollments.json
   def create
     @course_class = CourseClass.find(params[:course_class_id])
-    @enrollment = Enrollment.new(params[:enrollment])
+    @enrollment = Enrollment.new()
+    @enrollment.person_id = params[:id_person_enrollment]
     @enrollment.course_class = @course_class
 
     respond_to do |format|

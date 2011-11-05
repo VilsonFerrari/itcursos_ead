@@ -5,6 +5,7 @@
         <ul class="nav">
 	      <li <%= "class=active" if controller.controller_name == 'people'  %> ><%= link_to "Pessoas", people_path %></li>
 	      <li <%= "class=active" if controller.controller_name == 'courses' or controller.controller_name == 'course_classes'  %> ><%= link_to "Cursos", courses_path %></li>
+        <li <%= "class=active" if controller.controller_name == 'locations' %> ><%= link_to "Unidades", locations_path %></li>
 	      <li></li>
 	    </ul>
       <ul class="status">

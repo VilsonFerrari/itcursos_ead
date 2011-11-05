@@ -1,3 +1,5 @@
 class Person < ActiveRecord::Base
   has_many :enrollments
-end
+  validates_associated :enrollments
+  
+ end

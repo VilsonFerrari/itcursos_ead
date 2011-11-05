@@ -1,5 +1,5 @@
 class CourseClassesController < ApplicationController
-  # GET /course_classes/1
+  # GET /course_classes/1 
   # GET /course_classes/1.json
   def show
     @course_class = CourseClass.find(params[:id])

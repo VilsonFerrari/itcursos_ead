@@ -30,3 +30,5 @@ gem 'devise'
 gem 'css-bootstrap-rails'
 
 gem 'will_paginate', '~> 3.0.2'
+
+
