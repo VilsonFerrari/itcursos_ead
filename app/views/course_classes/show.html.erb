@@ -16,8 +16,9 @@
 <%= link_to 'Edit', edit_course_class_path(@course_class) %> |
 <%= link_to 'Back', @course %> |
 
-
-<h2>Alunos Matriculados</h2>
+<div class="page-header">
+  <h2>Alunos Matriculados</h2>
+</div>
 
 <table>
   <tr>
@@ -36,6 +37,8 @@
 <% end %>
 </table>
 
-<h3>Adicionar Aluno</h3>
+<div class="page-header">
+  <h2>Adicionar Aluno</h2>
+</div>
 
 <%= render 'enrollment_form' %>

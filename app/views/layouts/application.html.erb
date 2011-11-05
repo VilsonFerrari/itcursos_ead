@@ -12,15 +12,13 @@
   <%= render 'layouts/header' %>
 
   <section id="content">
-    <section class="container">
+    <section class="container noisy">
       <section id="inner_content">
         <%= render 'layouts/alert-messages'%>
-        <section class="container">
-          <%= yield %>
-        </section>
+        <%= yield %>
       </section>
     </section>
-    <section id="footer">
-    </section> 
+  </section>
+  <section id="footer"></section>
 </body>
 </html>

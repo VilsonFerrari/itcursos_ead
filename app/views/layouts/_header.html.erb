@@ -3,7 +3,15 @@
     <div class="container">
       <h3><%= link_to "ItcursosEad", root_path %></h3>
         <ul class="nav">
-	      <li <%= "class=active" if controller.controller_name == 'people'  %> ><%= link_to "Pessoas", people_path %></li>
+          <li <%= controller.controller_name == 'people' ? 'class=\'dropdown active\'' : 'class="dropdown"' %>>
+            
+            <a href="#" class="dropdown-toggle">People</a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "New Person", new_person_path %></li>
+              <li class="divider"></li>
+              <li><%= link_to "Listar", people_path %></li>
+            </ul>
+          </li>
 	      <li <%= "class=active" if controller.controller_name == 'courses' or controller.controller_name == 'course_classes'  %> ><%= link_to "Cursos", courses_path %></li>
         <li <%= "class=active" if controller.controller_name == 'locations' %> ><%= link_to "Unidades", locations_path %></li>
 	      <li></li>
